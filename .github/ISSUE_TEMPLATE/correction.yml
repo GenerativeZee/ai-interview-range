@@ -1,0 +1,55 @@
+name: Report an error
+description: Something on the site is wrong, out of date, or misleading
+title: "[Correction] "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **This is the most valuable kind of contribution.** An interview-prep
+        resource that is confidently wrong is worse than no resource, so please
+        do report anything that looks off — including small things.
+
+  - type: input
+    id: where
+    attributes:
+      label: Where is it?
+      description: Section and question, or just paste the text you're referring to.
+      placeholder: 05 RAG Systems → "Explain Reciprocal Rank Fusion"
+    validations:
+      required: true
+
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What's wrong?
+      description: Quote the specific claim if you can.
+    validations:
+      required: true
+
+  - type: textarea
+    id: right
+    attributes:
+      label: What should it say?
+    validations:
+      required: false
+
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: A paper, documentation page or other reference. Speeds up verification considerably.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: How significant is it?
+      options:
+        - Typo or wording
+        - Misleading but not strictly wrong
+        - Factually incorrect
+        - Factually incorrect AND likely to cost someone an interview
+    validations:
+      required: true

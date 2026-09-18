@@ -1,0 +1,45 @@
+name: Suggest a glossary term
+description: A term used on the site that isn't explained, or an explanation that could be clearer
+title: "[Glossary] "
+labels: ["glossary"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The goal is that anyone can read this site without already knowing the
+        vocabulary. If you hit a term that wasn't explained, that's a bug.
+
+  - type: input
+    id: term
+    attributes:
+      label: The term
+      placeholder: speculative decoding
+    validations:
+      required: true
+
+  - type: textarea
+    id: definition
+    attributes:
+      label: Plain-English definition
+      description: >
+        One or two sentences, written for someone who has never heard the term.
+        No jargon inside the definition. Leave blank if you just want to flag it.
+    validations:
+      required: false
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters in practice
+      description: Optional — shown as a second line in the tooltip.
+    validations:
+      required: false
+
+  - type: input
+    id: also
+    attributes:
+      label: Acronyms or alternative spellings
+      description: Comma separated. These link to the same definition.
+      placeholder: spec decoding, speculative sampling
+    validations:
+      required: false

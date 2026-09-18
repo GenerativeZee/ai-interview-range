@@ -1,0 +1,111 @@
+name: Suggest a question
+description: Add an interview question and answer to the bank
+title: "[Question] "
+labels: ["question-suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing. Every submission is researched and verified before
+        it's merged, and you'll be credited.
+
+        **Please don't include anything confidential or under NDA.** You can leave
+        the company name out entirely — the question itself is what's useful.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: The question
+      description: Phrased the way an interviewer would actually ask it, not as a topic heading.
+      placeholder: How would you know if your reranker is hurting recall rather than helping?
+    validations:
+      required: true
+
+  - type: textarea
+    id: answer
+    attributes:
+      label: Suggested answer
+      description: >
+        Include the reasoning, not just the conclusion. What are the tradeoffs?
+        What's the follow-up an interviewer would ask next? Rough notes are fine —
+        clarity matters more than polish.
+      placeholder: |
+        Compare context recall before and after the reranker on the same golden set.
+        The reranker can only reorder what first-stage retrieval already returned, so
+        if recall@50 is healthy but recall@5 drops, the reranker is demoting correct
+        passages...
+    validations:
+      required: true
+
+  - type: textarea
+    id: trap
+    attributes:
+      label: The trap, or the follow-up question
+      description: The plausible-sounding wrong answer, or what the interviewer asks next. Optional but valuable.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: section
+    attributes:
+      label: Which section does this belong in?
+      options:
+        - 01 Core ML & Statistics
+        - 02 Deep Learning
+        - 03 Transformers & LLM Internals
+        - 04 Fine-tuning & Alignment
+        - 05 RAG Systems
+        - 06 Agentic AI Engineering
+        - 07 MLOps & LLMOps
+        - 08 Production Systems & Security
+        - 09 System Design Cases
+        - 10 Coding & SQL
+        - 11 Project Deep Dives
+        - 12 Behavioral & Senior Signals
+        - 13 Study Plan & Mock Rounds
+        - Not sure / suggest a new section
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: roles
+    attributes:
+      label: Which roles does this apply to?
+      options:
+        - label: AI Engineer
+        - label: Agentic AI Engineer
+        - label: Data Scientist
+    validations:
+      required: false
+
+  - type: dropdown
+    id: level
+    attributes:
+      label: Level
+      options:
+        - Foundation — someone new to the field needs this
+        - Working knowledge — expected of a mid-level candidate
+        - Advanced — distinguishes a senior or lead candidate
+    validations:
+      required: false
+
+  - type: input
+    id: source
+    attributes:
+      label: Where did this come from?
+      description: >
+        Real interview provenance helps prioritise review. A paper or documentation
+        link is equally useful. Leave the company name out if you'd rather.
+      placeholder: Asked in a Senior AI Engineer loop, October 2026
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Confirmations
+      options:
+        - label: I'm happy for this to be published under CC BY-SA 4.0
+          required: true
+        - label: This contains nothing confidential or under NDA
+          required: true

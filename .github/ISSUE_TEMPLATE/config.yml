@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Read the contributing guide
+    url: https://github.com/GenerativeZee/ai-interview-range/blob/main/CONTRIBUTING.md
+    about: What makes a good submission, and how the review process works.
+  - name: Ask a question or start a discussion
+    url: https://github.com/GenerativeZee/ai-interview-range/discussions
+    about: For questions about using the site, study strategy, or anything not a bug.
